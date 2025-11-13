@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produtos - Auri</title>
+
+    <link rel="icon" type="image/png" href="image/Logo.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <style>
+
+        .products-container {
+
+            min-height: calc(100vh - 300px);
+
+            padding: 150px 2rem 4rem;
+
+            background-color: #E8BF6C;
+
+        }
+
+
+
+        .products-wrapper {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .products-header {
+
+            text-align: center;
+
+            margin-bottom: 3rem;
+
+        }
+
+
+
+        .products-header h2 {
+
+            color: #ffffff;
+
+            font-size: 2.5rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            font-weight: 600;
+
+            margin-bottom: 1rem;
+
+        }
+
+
+
+        .products-table {
+
+            background-color: #F8F8F8;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow: 0 10px 30px rgba(232, 191, 108, 0.2);
+
+        }
+
+
+
+        .products-table table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+        }
+
+
+
+        .products-table thead {
+
+            background-color: #ffffff;
+
+        }
+
+
+
+        .products-table th {
+
+            padding: 1.2rem;
+
+            text-align: left;
+
+            color: #000000;
+
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            font-size: 0.9rem;
+
+        }
+
+
+
+        .products-table tbody tr {
+
+            border-bottom: 1px solid #ffffff;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+
+
+        .products-table tbody tr:hover {
+
+            background-color: #ffffff;
+
+        }
+
+
+
+        .products-table tbody tr:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+
+        .products-table td {
+
+            padding: 1.2rem;
+
+            color: #000000;
+
+            font-size: 0.95rem;
+
+        }
+
+
+
+        .products-table td:first-child {
+
+            font-weight: 600;
+
+            color: #E8BF6C;
+
+        }
+
+
+
+        .price-cell {
+
+            font-weight: 600;
+
+            color: #000000;
+
+        }
+
+
+
+        .empty-state {
+
+            text-align: center;
+
+            padding: 3rem;
+
+            color: #999999;
+
+        }
+
+        .footer-color{
+            background-color: #E8BF6C;
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .products-container {
+
+                padding: 150px 1rem 4rem;
+
+            }
+
+
+
+            .products-header h2 {
+
+                font-size: 1.8rem;
+
+            }
+
+
+
+            .products-table {
+
+                overflow-x: auto;
+
+            }
+
+
+
+            .products-table table {
+
+                min-width: 600px;
+
+            }
+
+
+
+            .products-table th,
+
+            .products-table td {
+
+                padding: 0.8rem;
+
+                font-size: 0.85rem;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="black-line"></div>
+
+        <div class="header-title">
+
+            <div class="menu-toggle" id="menu-toggle">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </div>
+
+            <h2>Auri</h2>
+
+            <div class="icons">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <i class="fa-solid fa-user"></i>
+
+                <i class="fa-solid fa-star"></i>
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+        <div class="products-container">
+
+            <div class="products-wrapper">
+
+                <div class="products-header">
+
+                    <h2>Produtos</h2>
+
+                </div>
+
+                <div class="products-table">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+
+                                <th>Nome</th>
+
+                                <th>Descrição</th>
+
+                                <th>Categoria ID</th>
+
+                                <th>Preço</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="products-tbody">
+
+                            <!-- Produtos serão inseridos aqui via JavaScript -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <footer class="footer-color">
+
+            <div class="footer-container">
+
+                <div class="footer-top">
+
+                    <div class="footer-links">
+
+                        <a href="index.html">Sobre a Auri</a>
+
+                        <a href="#">Sustentabilidade</a>
+
+                        <a href="#">Termos e Condições</a>
+
+                        <a href="#">Privacidade</a>
+
+                    </div>
+
+                </div>
+
+                <div class="footer-social">
+
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+
+                </div>
+
+                <div class="footer-bottom">© 2025 Auri. Todos os direitos reservados.</div>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+
+    <script>
+
+        // Produto armazenado em memória
+
+        const produto = {
+
+            id: 1,
+
+            nome: "LipBalm Premium",
+
+            descricao: "Um balm nutritivo e sedoso que hidrata profundamente os lábios, deixando um brilho natural e um aroma irresistível.",
+
+            categoria_id: 3,
+
+            preco: 29.90
+
+        };
+
+
+
+        // Função para formatar preço
+
+        function formatarPreco(preco) {
+
+            return new Intl.NumberFormat('pt-BR', {
+
+                style: 'currency',
+
+                currency: 'BRL'
+
+            }).format(preco);
+
+        }
+
+
+
+        // Função para renderizar produtos
+
+        function renderizarProdutos() {
+
+            const tbody = document.getElementById('products-tbody');
+
+           
+
+            if (!produto) {
+
+                tbody.innerHTML = '<tr><td colspan="5" class="empty-state">Nenhum produto encontrado</td></tr>';
+
+                return;
+
+            }
+
+
+
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+
+                <td>${produto.id}</td>
+
+                <td>${produto.nome}</td>
+
+                <td>${produto.descricao}</td>
+
+                <td>${produto.categoria_id}</td>
+
+                <td class="price-cell">${formatarPreco(produto.preco)}</td>
+
+            `;
+
+            tbody.appendChild(row);
+
+        }
+
+
+
+        // Carregar produtos quando a página carregar
+
+        document.addEventListener('DOMContentLoaded', renderizarProdutos);
+
+    </script>
+
+</body>
+
+</html>
